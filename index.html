@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text to Speech</title>
+</head>
+<body>
+  <h2>Text to Speech Demo</h2>
+  <textarea id="text" rows="5" cols="30" placeholder="Type something..."></textarea><br>
+  <button onclick="speakText()">Speak</button>
+
+  <script>
+    function speakText() {
+      const text = document.getElementById('text').value;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US'; // Set language
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>
